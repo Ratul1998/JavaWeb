@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+	<meta charset="utf-8">
+	<title>Contact Form</title>
+	<link rel="stylesheet" href="" th:href="@{/css/mystyle.css}"/>
+</head>
+<body>
+	<div class="container">
+		<div class="form-box">
+			<div class="form-btn">
+				<button type="button" class="submit-btn"><b>Course Form</b></button>
+			</div>
+			<form id="form" class="input-grp" th:action="@{/saveCourseForm}" th:object="${course}">
+				<label class="text-label">Course Id</label><input type="text" class="input-field" placeholder="Course Id" required th:field="*{course_id}">
+				<label class="text-label">Course Name</label><input type="text" class="input-field" placeholder="Course Name" required th:field="*{c_name}">
+				<label class="text-label">Course Description</label><input type="text" class="input-field" placeholder="Course Description" required th:field="*{c_desp}">
+				<label class="text-label">Video Url</label><input type="url" class="input-field" placeholder="Video Url" required th:field="*{c_resource}">
+				<label class="text-label">Course Fees</label><input type="text" class="input-field" placeholder="Course Fees" required th:field="*{c_fees}">
+				<button type="submit" class="submit-btn"><b>Submit</b></button>
+			</form>
+		</div>
+	</div>
+
+	<script src="" th:src="@{/js/project.js}"></script>
+
+</body>
+</html>

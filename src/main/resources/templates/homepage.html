@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Home Page</title>
+<link rel="stylesheet" href="" th:href="@{/css/homepagestyle.css}"/>
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="navbar">
+			<img class="logo" th:src="${user.upload_photo}">
+			<ul>
+				<li><a th:href="@{/openContactForm}">Contact</a></li>
+				<li><a th:href="@{/openCourseForm}">Courses</a></li>
+				<li><a th:href="@{/openFeedbackForm}">Feedback</a></li>
+			</ul>
+		</nav>
+		<div class="center">
+			<h1>Welcome </h1>
+			<h1 th:text="${user.name}"></h1>
+			<br>
+			<h2>User ID </h2>
+			<h2 th:text="${user.user_id}"></h2>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+	<meta charset="utf-8">
+	<title>Contact Form</title>
+	<link rel="stylesheet" href="" th:href="@{/css/mystyle.css}"/>
+</head>
+<body>
+	<div class="container">
+		<div class="form-box">
+			<div class="form-btn">
+				<button type="button" class="submit-btn"><b>Contact Form</b></button>
+			</div>
+			<form id="form" class="input-grp" th:action="@{/saveContactForm}" th:object="${contact}">
+				<label class="text-label">User Id</label><input type="text" class="input-field" placeholder="User Id" required th:field="*{user_id}">
+				<label class="text-label">Name</label><input type="text" class="input-field" placeholder="Name" required th:field="*{name}">
+				<label class="text-label">Email</label><input type="email" class="input-field" placeholder="Email Id" required th:field="*{email}">
+				<label class="text-label">Phone Number</label><input type="text" class="input-field" placeholder="Phone Number" required th:field="*{phone_no}">
+				<label class="text-label">Message</label><input type="text" class="input-field" placeholder="Message" required th:field="*{messege}">
+				<button type="submit" class="submit-btn"><b>Submit</b></button>
+			</form>
+		</div>
+	</div>
+
+	<script src="" th:src="@{/js/project.js}"></script>
+
+</body>
+</html>

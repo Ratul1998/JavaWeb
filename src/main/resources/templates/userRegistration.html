@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Login SignUp</title>
+<link rel="stylesheet" href="" th:href="@{/css/mystyle.css}"/>
+</head>
+
+<body>
+
+  <div class="container" th:switch="${message}">
+  
+    <div th:case="'Incorrect Password'" class="alert alert-danger">
+        <strong>Failure!</strong> Incorrect Password. Please try again
+	</div>
+	
+	<div th:case="'User Not Found'" class="alert alert-danger">
+	    <strong>Failure!</strong> User Not Found. Please try again 
+    </div>
+  
+  	<div class="form-box">
+  		 <div class="button-box">
+				<div id="btn"></div>
+				<button type="button" class="toggle-btn" onclick="login()" ><b>Log In</b></button>
+				<button type="button" class="toggle-btn" onclick="register()"><b>Register</b></button>
+		 </div>
+  		
+  		 <form id="login" class="input-grp"  th:action="@{/authenticateUser}" th:object="${user}">
+			<label class="text-label">User Id</label><input type="number" class="input-field" placeholder="User Id" required value="" th:field="*{user_id}">
+			<label class="text-label">Password</label><input type="password" class="input-field" placeholder="Password" required th:field="*{password}">
+			<button type="submit" class="submit-btn"><b>Log In</b></button>
+		 </form>
+  		
+  		 <form id="register" class="input-grp" th:action="@{/saveUser}" th:object="${user}">
+            <label class="text-label">Name</label><input type="text" class="input-field" placeholder="Name" required th:field="*{name}">
+            
+            <label class="text-label">Email</label><input type="text" class="input-field" placeholder="Email" required th:field="*{email}">
+            
+            <label class="text-label">Password</label><input type="password" class="input-field" placeholder="Password" required th:field="*{password}">
+            
+            <label class="text-label">Phone</label><input type="number" class="input-field" placeholder="Phone" required th:field="*{phone_no}">
+            
+            <label class="text-label">Address</label><input type="text" class="input-field" placeholder="Address" required th:field="*{address}">
+            
+            <label class="text-label">Photo URL</label><input type="text" class="input-field" placeholder="Photo URL" required th:field="*{upload_photo}">
+                
+            <button type="submit" class="submit-btn" >Register</button>
+        </form>     
+        
+           
+  	</div>
+  </div>
+  
+  
+  
+  
+  <script src="" th:src="@{/js/project.js}"></script>
+
+</body>
+
+</html>
